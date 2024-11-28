@@ -770,7 +770,8 @@ class Middleware2Cdx:
                     )
         
         for rel in remove_rels:
-            bom_comps.remove(rel)
+            if rel in bom_comps:
+                bom_comps.remove(rel)
         
         for source, target in depend_dic.items():
             dependencies.append(
